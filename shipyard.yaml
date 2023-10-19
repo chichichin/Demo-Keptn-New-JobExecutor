@@ -6,9 +6,8 @@ spec:
   stages:
     - name: "qa"
       sequences:
-        - name: "delivery"
+        - name: "loadtest-execution"
           tasks:
-            - name: "deployment"
             - name: "test"
               properties:
                 teststrategy: performance
