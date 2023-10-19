@@ -1,0 +1,26 @@
+apiVersion: v2
+actions:
+  - name: "Run JMeter"
+    events:
+      - name: "sh.keptn.event.test.triggered"
+        jsonpath:
+          property: "$.data.test.teststrategy"
+          match: "performance"
+    tasks:
+      - name: "Run jmeter smoke tests"
+        files:
+          - jmeter/load.jmx
+        image: "docker.io/chichichin/jmeter:latest"
+        args:
+          - '-n'
+          - '-t'
+          - '/keptn/jmeter/load.jmx'
+          - '-JPROTOCOL=http'
+          - '-JSERVER_PROTOCOL=http'
+          - '-JVUCount=10'
+          - '-JLoopCount=10'
+          - '-JSERVER_URL=$(KEPTN_SERVICE).$(KEPTN_PROJECT)-$(KEPTN_STAGE).svc.cluster.local'
+          - '-j'
+          - '/keptn/jmeter/test.log'
+          - '-l'
+          - '/keptn/jmeter/log.tlf'
