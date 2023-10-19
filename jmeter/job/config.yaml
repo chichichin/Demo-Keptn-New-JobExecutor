@@ -9,12 +9,12 @@ actions:
     tasks:
       - name: "Run jmeter smoke tests"
         files:
-          - jmeter/load.jmx
+          - jmeter/blazedemo.jmx
         image: "docker.io/chichichin/jmeter:latest"
         args:
           - '-n'
           - '-t'
-          - '/keptn/jmeter/load.jmx'
+          - '/keptn/jmeter/blazedemo.jmx'
           - '-JPROTOCOL=http'
           - '-JSERVER_PROTOCOL=http'
           - '-JVUCount=10'
