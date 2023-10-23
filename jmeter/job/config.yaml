@@ -24,3 +24,5 @@ actions:
           - '/keptn/jmeter/test.log'
           - '-l'
           - '/keptn/jmeter/log.tlf'
+          - 'Jprometheus.port=8080'
+          - 'Jprometheus.ip=0.0.0.0'
