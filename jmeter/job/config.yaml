@@ -9,12 +9,12 @@ actions:
     tasks:
       - name: "Run jmeter smoke tests"
         files:
-          - jmeter/loadPrometheus.jmx
+          - jmeter/loadPrometheusAddTimer.jmx
         image: "docker.io/chichichin/jmeter_prometheus:latest"
         args:
           - '-n'
           - '-t'
-          - '/keptn/jmeter/loadPrometheus.jmx'
+          - '/keptn/jmeter/loadPrometheusAddTimer.jmx'
           - '-JPROTOCOL=http'
           - '-JSERVER_PROTOCOL=http'
           - '-JVUCount=10'
