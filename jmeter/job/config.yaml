@@ -10,7 +10,7 @@ actions:
       - name: "Run jmeter smoke tests"
         files:
           - jmeter/loadPrometheusAddTimer.jmx
-        image: "docker.io/chichichin/jmeter_prometheus:latest"
+        image: "docker.io/chichichin/jmeter_prometheus_changeport:latest"
         args:
           - '-n'
           - '-t'
