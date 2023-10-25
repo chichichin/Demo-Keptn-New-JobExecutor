@@ -4,10 +4,19 @@ metadata:
   name: "shipyard-delivery"
 spec:
   stages:
-    - name: "qa"
+    - name: "loadtest"
       sequences:
         - name: "loadtest-execution"
           tasks:
             - name: "test"
               properties:
                 teststrategy: performance
+        - name: "loadtest-evaluation"
+          tasks:
+            - name: "evaluation"
+              properties:
+                timeframe: 10m
+        - name: "loadtest-execution-and-evaluation"
+          tasks:
+            - name: "test"
+            - name: "evaluation"
