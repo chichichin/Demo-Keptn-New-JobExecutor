@@ -4,13 +4,13 @@ comparision:
   include_result_with_score: "pass"
   aggregate_function: avg
 objectives:
-#  - sli: success_rate
-#    pass:
-#      - criteria:
-#          - ">0.99"
-#    warning:
-#      - criteria:
-#          - ">0.95"
+  - sli: success_rate
+    pass:
+      - criteria:
+          - ">0.99"
+    warning:
+      - criteria:
+          - ">0.95"
   - sli: response_time_95pct
     pass:
       - criteria:
