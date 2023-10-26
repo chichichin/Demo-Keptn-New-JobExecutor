@@ -25,7 +25,7 @@ objectives:
     warning:
       - criteria:
           - "<1000"
-  - sli: tps
+  - sli: rps
     pass:
       - criteria:
           - ">10"
