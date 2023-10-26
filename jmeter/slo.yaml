@@ -4,6 +4,13 @@ comparision:
   include_result_with_score: "pass"
   aggregate_function: avg
 objectives:
+  - sli: count
+    pass:
+      - criteria:
+          - ">24"
+    warning:
+      - criteria:
+          - ">22"
   - sli: success_rate
     pass:
       - criteria:
