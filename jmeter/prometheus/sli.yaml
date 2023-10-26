@@ -3,4 +3,4 @@ indicators:
   success_rate: 'sum_over_time(jmeter_success_total[$DURATION_SECONDS])/sum_over_time(jmeter_count_total[$DURATION_SECONDS])'
   response_time_95pct: 'last_over_time(jmeter_response_time_as_summary{quantile="0.95"}[$DURATION_SECONDS])'
   avg_response_time: 'sum_over_time(jmeter_response_time_as_summary_sum[$DURATION_SECONDS])/sum_over_time(jmeter_response_time_as_summary_count[$DURATION_SECONDS])'
-  rps: 'rate(jmeter_count_total[$DURATION_SECONDS])'
+  rps: 'sum(rate(http_requests_total{category="null", code="200", instance="34.128.105.202:9270", job="jmeter", label="/users-5", quantile="0.99"}[$DURATION_SECONDS]))'
