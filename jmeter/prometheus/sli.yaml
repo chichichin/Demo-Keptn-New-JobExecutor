@@ -2,5 +2,5 @@ spec_version: '1.0'
 indicators:
   success_rate: 'sum_over_time(jmeter_success_total[$DURATION_SECONDS])/sum_over_time(jmeter_count_total[$DURATION_SECONDS])'
   response_time_95pct: 'last_over_time(jmeter_response_time_as_summary{quantile="0.95"}[$DURATION_SECONDS])'
-  avg_response_time: 'sum_over_time(jmeter_response_time_as_summary_sum[8m])/sum_over_time(jmeter_response_time_as_summary_count[8m])'
+  avg_response_time: 'sum_over_time(jmeter_response_time_as_summary_sum[$DURATION_SECONDS])/sum_over_time(jmeter_response_time_as_summary_count[$DURATION_SECONDS])'
   tps: 'sum(rate(jmeter_count_total[$DURATION_SECONDS]))'
